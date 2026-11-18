@@ -1,43 +1,179 @@
-/* Configurações universais */
+
+/* CONFIGURAÇÕES UNIVERSAIS */
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-/* Estilos gerais */
+
+/* ESTILOS GERAIS */
 body {
-  font-family: "Segoe UI";
-  color: #222;
-  background-color: #f6f7f9;
-  line-height: 1.6;
+    font-family: "Segoe UI", sans-serif;
+    color: #59404b;
+    background-color: #f8dce6;
+    line-height: 1.6;
 }
+
+/* CABEÇALHO */
 header {
-  background-color: #1b1b1b;
-  color: white;
-  padding: 0.5rem;
-  text-align: center;
+    background-color: #f4bfd2;
+    color: #783e59;
+    padding: 0.5rem;
+    text-align: center;
+    border-bottom: 2px solid #e9a9c0;
 }
-footer {
-  background-color: #1b1b1b;
-  color: white;
-  margin-top: 2rem;
-  padding: 1rem 0.75rem;
-  text-align: center;
+
+/* MENU DE NAVEGAÇÃO */
+.navbar,
+.navbar.bg-dark,
+.bg-dark {
+    background-color: #783e59 !important;
 }
+
+.navbar a {
+    color: #fff0f4 !important;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #ffc5d8 !important;
+}
+
+/* BOTÕES DO MENU */
+.navbar .btn-outline-primary {
+    color: #ffc5d8 !important;
+    border-color: #ffc5d8 !important;
+}
+
+.navbar .btn-outline-primary:hover {
+    background-color: #ffc5d8 !important;
+    color: #783e59 !important;
+}
+
+/* ÁREA PRINCIPAL */
 main {
-  width: 1300px;
-  min-height: 100vh;
-  margin: 1.5rem auto;
-  padding: 1rem 3rem;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    width: min(1300px, calc(100% - 32px));
+    min-height: 100vh;
+    margin: 1.5rem auto;
+    padding: 1rem 3rem;
+    background-color: #fff0f5;
+    border: 1px solid #f2cbd9;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(120, 62, 89, 0.12);
 }
-img {
-  border-radius: 8px;
-}
+
+/* TÍTULOS */
 h1,
 h2,
-h3,
+h3 {
+    color: #a64d72;
+    padding: 10px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* PARÁGRAFOS */
 p {
-  padding: 10px;
+    padding: 10px;
+}
+
+/* IMAGENS */
+img {
+    border-radius: 8px;
+}
+
+/* CARTÕES */
+.card {
+    background-color: #fffafd;
+    border: 1px solid #efc5d6;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(166, 77, 114, 0.10);
+    overflow: hidden;
+}
+
+.card-body {
+    padding: 1.25rem;
+}
+
+/* CAMPOS DE FORMULÁRIO */
+.form-control {
+    background-color: #fffafd;
+    color: #59404b;
+    border: 1px solid #e8b6ca;
+    border-radius: 8px;
+}
+
+.form-control:focus {
+    border-color: #d879a0;
+    box-shadow: 0 0 0 0.2rem rgba(216, 121, 160, 0.2);
+}
+
+/* BOTÕES */
+.btn-danger {
+    background-color: #d879a0;
+    border-color: #d879a0;
+    color: white;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.btn-danger:hover {
+    background-color: #b85c83;
+    border-color: #b85c83;
+    color: white;
+}
+
+/* MENSAGENS */
+.alert {
+    border-radius: 8px;
+}
+
+/* RODAPÉ */
+footer {
+    background-color: #783e59;
+    color: #fff0f4;
+    margin-top: 2rem;
+    padding: 1rem 0.75rem;
+    text-align: center;
+}
+
+/* CHAT */
+.chat {
+    max-height: 300px;
+    min-height: 300px;
+    background-color: #fff0f5;
+    border: 1px solid #efc5d6;
+    border-radius: 10px;
+    padding: 20px;
+    overflow-y: scroll;
+}
+
+/* CONTAINERS */
+.container {
+    margin-top: 30px;
+    max-width: 900px;
+}
+
+/* LINHAS DIVISÓRIAS */
+hr {
+    border-color: #edc5d5;
+    opacity: 0.8;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+
+    main {
+        width: calc(100% - 20px);
+        padding: 1rem;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .navbar {
+        padding: 10px;
+    }
 }

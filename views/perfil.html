@@ -1,0 +1,82 @@
+
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container col-md-6 mt-4">
+
+    <div class="card">
+
+        <div class="card-body text-center">
+
+            <h2>Meu perfil</h2>
+
+            <hr>
+
+            <!-- FOTO DE PERFIL -->
+            {% if usuario.foto_perfil %}
+
+                <img
+                    src="{{ url_for('static', filename='uploads/' + usuario.foto_perfil) }}"
+                    alt="Foto de perfil"
+                    style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;"
+                >
+
+            {% else %}
+
+                <div
+                    style="width: 150px; height: 150px; border-radius: 50%; background: #efc5d6; display: flex; align-items: center; justify-content: center; margin: auto;"
+                >
+                    <span style="font-size: 50px;">♡</span>
+                </div>
+
+            {% endif %}
+
+            <br><br>
+
+            <!-- INFORMAÇÕES -->
+            <h4>{{ usuario.nickname }}</h4>
+
+            <p>{{ usuario.email }}</p>
+
+            <hr>
+
+            <!-- FORMULÁRIO PARA TROCAR FOTO -->
+            <form
+                action="{{ url_for('perfil') }}"
+                method="POST"
+                enctype="multipart/form-data"
+            >
+
+                <label class="form-label">
+                    Escolha uma nova foto de perfil:
+                </label>
+
+                <input
+                    type="file"
+                    name="foto_perfil"
+                    class="form-control"
+                    accept=".png,.jpg,.jpeg,.gif"
+                    required
+                >
+
+                <br>
+
+                <button type="submit" class="btn btn-danger">
+                    Atualizar foto
+                </button>
+
+            </form>
+
+            <br>
+
+            <a href="{{ url_for('feed') }}" class="btn btn-outline-secondary">
+                Voltar ao Feed
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock content %}
